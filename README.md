@@ -12,10 +12,10 @@ This is our implementation of the **DAXPY** operation using **both C and x86-64*
 
 ## 💻 Language & Tools
 
-- **C (GCC -m64)** — Reference implementation
-- **x86-64 Assembly (NASM syntax)** — SIMD scalar implementation
+- **C** — Reference implementation
+- **x86-64** — SIMD scalar implementation
 - Compiled using: `gcc`, `nasm`
-- Platform: Windows 10, Command Line Interface (CLI)
+- Platform: Windows 10, CLI
 - Timing: `clock()` from `<time.h>`
 - Output: `printf` for results, correctness, and time (in seconds)
 
