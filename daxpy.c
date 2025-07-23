@@ -7,7 +7,8 @@ extern void asm_daxpy(int n, double a, double* x, double* y, double* z);
 
 void c_daxpy(int n, double a, double* x, double* y, double* z) 
 {
-    for (int i = 0; i < n; i++) {
+    for (int i = 0; i < n; i++) 
+    {
         z[i] = a * x[i] + y[i];
     }
 }
@@ -41,8 +42,10 @@ int main()
 
     // Correctness check
     int correct = 1;
-    for (int i = 0; i < n; i++) {
-        if (fabs(z_c[i] - z_asm[i]) > 1e-9) {
+    for (int i = 0; i < n; i++)
+        {
+        if (fabs(z_c[i] - z_asm[i]) > 1e-9) 
+        {
             correct = 0;
             printf("Mismatch at index %d: C=%f ASM=%f\n", i, z_c[i], z_asm[i]);
             break;
