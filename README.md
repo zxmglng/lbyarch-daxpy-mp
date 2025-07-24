@@ -25,8 +25,9 @@ This is our implementation of the **DAXPY** operation using **both C and x86-64*
 
 ```bash
 # Compile ASM and C:
-nasm -f win64 daxpy.asm -o daxpy.obj
-gcc -m64 daxpy.c daxpy.obj -o daxpy.exe
+nasm -f win64 daxpy.asm -o asm_daxpy.obj
+gcc -c daxpy.c -o c_daxpy.obj -m64
+gcc c_daxpy.obj asm_daxpy.obj -o daxpy.exe -m64
 
 # Run executable:
 daxpy.exe
@@ -34,9 +35,18 @@ daxpy.exe
 
 ---
 
-## ⏱️ Output Screenshots (C vs Assembly)
+## ⏱️ Output Screenshots 
 
-<img width="600" height="950" alt="image" src="https://github.com/user-attachments/assets/3b90fa82-8d07-4d8d-bd62-4df4996ec2bc" />
+<img width="525" height="85" alt="image" src="https://github.com/user-attachments/assets/5028dd0b-6c9a-4449-a163-4d68576baffe" />
+
+<img width="525" height="212" alt="image" src="https://github.com/user-attachments/assets/8fd2cf7b-26ab-4b4c-ad0e-124ec065ea2a" />
+
+<img width="525" height="212" alt="image" src="https://github.com/user-attachments/assets/e2942778-e70b-44da-af50-67b7b9d9104e" />
+
+<img width="525" height="212" alt="image" src="https://github.com/user-attachments/assets/f7fbdfa5-05d6-4953-a073-954077c7915f" />
+
+
+
 
 
 ---
@@ -44,11 +54,11 @@ daxpy.exe
 
 | Vector Size | C Time (s) | ASM Time (s) | Faster |
 | ----------- | ---------- | ------------ | ------ |
-| 2²⁰         | 0.004167   | 0.001733     | ASM    |
-| 2²⁴         | 0.067967   | 0.034233     | ASM    |
-| 2²⁸         | 1.091200   | 0.453767     | ASM    |
+| 2²⁰         | 0.004367   | 0.001800     | ASM    |
+| 2²⁴         | 0.067667   | 0.037000     | ASM    |
+| 2²⁸         | 1.083667   | 0.472333     | ASM    |
 
-*INSERT SHORT ANALYSIS (arnd 4-5 sentences?)*
+*INSERT SHORT ANALYSIS (arnd 4-5 sentences)*
 
 ---
 
@@ -63,7 +73,6 @@ daxpy.exe
 ```bash
 lbyarch-daxpy-mp/
 ├── daxpy.c              
-├── daxpy.asm           
-├── README.md            
-└── screenshots/         
+├── daxpy.asm                      
+└── README.md         
 ```
