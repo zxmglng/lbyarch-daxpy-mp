@@ -36,7 +36,7 @@ daxpy.exe
 
 ## ⏱️ Output Screenshots (C vs Assembly)
 
-<img width="246" height="397" alt="image" src="https://github.com/user-attachments/assets/3b90fa82-8d07-4d8d-bd62-4df4996ec2bc" />
+<img width="600" height="950" alt="image" src="https://github.com/user-attachments/assets/3b90fa82-8d07-4d8d-bd62-4df4996ec2bc" />
 
 
 ---
@@ -65,5 +65,5 @@ lbyarch-daxpy-mp/
 ├── daxpy.c              
 ├── daxpy.asm           
 ├── README.md            
-└── screenshot/         
+└── screenshots/         
 ```
