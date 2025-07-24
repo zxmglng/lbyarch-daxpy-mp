@@ -52,7 +52,7 @@ daxpy.exe
 
 ---
 
-## 🎥 Demo Videos
+## 🎥 Demo Video
 
 *Insert YT link for short demo*
 
