@@ -1,4 +1,4 @@
-# ⚙️ [Group 8] DAXPY Kernel (C + x86-64)
+# ⚙️ [Group 8] DAXPY (C + x86-64)
 
 This is our implementation of the **DAXPY** operation using **both C and x86-64**, built and benchmarked under Windows for our LBYARCH machine project.
 
