@@ -1,37 +1,32 @@
-; SUBJECT TO EDIT/CHANGE
-  
 section .text
 global asm_daxpy
 default rel
 
 asm_daxpy:
-    ; RCX = n         ; int n
-    ; XMM1 = a        ; double a
-    ; RDX = x[]       ; double* x
-    ; R8  = y[]       ; double* y
-    ; R9  = z[]       ; double* z
-
     push rbp
     mov rbp, rsp
-    sub rsp, 32         
+    sub rsp, 32              
 
-    xor r10, r10         ; i = 0
+    movsd xmm3, xmm0         
 
-.loop:
-    cmp r10, rcx         ; if (i >= n) break
-    jge .done
+    xor r10, r10     
 
-    movsd xmm2, [rdx + r10*8]
-    movsd xmm3, [r8 + r10*8]
-    mulsd xmm2, xmm1
-    addsd xmm2, xmm3
+function:
+    cmp r10, rcx
+    jge finish
 
-    movsd [r9 + r10*8], xmm2
+    movsd xmm1, [rdx + r10*8]
+    movsd xmm2, [r8 + r10*8] 
+
+    mulsd xmm1, xmm3      
+    addsd xmm1, xmm2        
+
+    movsd [r9 + r10*8], xmm1  
 
     inc r10
-    jmp .loop
+    jmp function
 
-.done:
-    mov rsp, rbp
+finish:
+    add rsp, 32
     pop rbp
     ret
