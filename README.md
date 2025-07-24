@@ -4,9 +4,12 @@ This is our implementation of the **DAXPY** operation using **both C and x86-64*
 
 ---
 
-## 🔬 Project Description
+## 🔬 Project Description & Specifications 
 
 **DAXPY** stands for “**Double precision A·X Plus Y**”. Our project implements this operation in both C and Assembly, compares their runtime performance, checks result correctness, and scales the computation across large vector sizes ranging from 2²⁰ up to 2²⁸ elements.
+
+<img width="571" height="368" alt="image" src="https://github.com/user-attachments/assets/a0593413-b79a-45aa-a738-57072ec1a9c4" />
+
 
 ---
 
