@@ -63,7 +63,7 @@ daxpy.exe
 
 *INSERT SHORT ANALYSIS (arnd 4-5 sentences)*
 
----
+After running the project, here are the reasons why the x86-64 kernel is faster than the C kernel: Register-Level Optimization, Reduced Abstraction Overhead, Fewer Memory Accesses and Function Calls, Better Instruction Pipelining. For register-level optimization, the assembly code directly uses xmm registers and SIMD instructions like mulsd and addsd, which are optimized for double-precision floating-point operations. For the reduced abstraction overhead, assembly has minimal instruction dispatch which results in lower instruction latency, unlike in C where it goes through several compiler optimization layers and function call overheads. The third reason mentioned states that the loop in assembly avoids complicated indexing or memory safety checks performed implicitly by C, which therefore leads to faster execution especially with large data sets. And for the final reason, the consistent, simple loop with minimal branching enables better CPU pipelining and instruction prefetching.
 
 ## 🎥 Demo Video
 
