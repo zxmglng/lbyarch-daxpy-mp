@@ -60,9 +60,9 @@ int main()
 
         printf("  INDEX     X[i]      Y[i]      Z_C[i]     Z_ASM[i]\n");
         printf("----------------------------------------------------\n");
-        for (int i = 0; i < 10 && i < n; i++) {
-            printf("  %3d  %9.2f  %9.2f  %9.2f  %9.2f\n",
-                   i, X[i], Y[i], Z_C[i], Z_ASM[i]);
+        for (int i = 0; i < 10 && i < n; i++) 
+		{
+            printf("  %3d  %9.2f  %9.2f  %9.2f  %9.2f\n", i, X[i], Y[i], Z_C[i], Z_ASM[i]);
         }
 
         int correct = 1;
