@@ -40,30 +40,24 @@ daxpy.exe
 
 ## ⏱️ Output Screenshots 
 
-<img width="525" height="85" alt="image" src="https://github.com/user-attachments/assets/5028dd0b-6c9a-4449-a163-4d68576baffe" />
+<img width="632" height="149" alt="image" src="https://github.com/user-attachments/assets/332146d0-7da6-43b4-88fb-bc4826e20ccc" />
 
-<img width="525" height="212" alt="image" src="https://github.com/user-attachments/assets/8fd2cf7b-26ab-4b4c-ad0e-124ec065ea2a" />
+<img width="632" height="278" alt="image" src="https://github.com/user-attachments/assets/ce0cd4e2-c0dc-4174-a4be-0138f5a49459" />
 
-<img width="525" height="212" alt="image" src="https://github.com/user-attachments/assets/e2942778-e70b-44da-af50-67b7b9d9104e" />
+<img width="632" height="278" alt="image" src="https://github.com/user-attachments/assets/63b99f36-bd1d-4f61-aea4-1b70983f10be" />
 
-<img width="525" height="212" alt="image" src="https://github.com/user-attachments/assets/f7fbdfa5-05d6-4953-a073-954077c7915f" />
-
-
-
-
+<img width="632" height="278" alt="image" src="https://github.com/user-attachments/assets/eef31171-f0cb-4ef7-863a-5340f8e23b90" />
 
 ---
 ## 📊 Performance Comparison
 
 | Vector Size | C Time (s) | ASM Time (s) | Faster |
 | ----------- | ---------- | ------------ | ------ |
-| 2²⁰         | 0.004367   | 0.001800     | ASM    |
-| 2²⁴         | 0.067667   | 0.037000     | ASM    |
-| 2²⁸         | 1.083667   | 0.472333     | ASM    |
+| 2²⁰         | 0.004200   | 0.001567     | ASM    |
+| 2²⁴         | 0.068367   | 0.036400     | ASM    |
+| 2²⁸         | 1.092833   | 0.426200     | ASM    |
 
-*INSERT SHORT ANALYSIS (arnd 4-5 sentences)*
-
-After running the project, here are the reasons why the x86-64 kernel is faster than the C kernel: Register-Level Optimization, Reduced Abstraction Overhead, Fewer Memory Accesses and Function Calls, Better Instruction Pipelining. For register-level optimization, the assembly code directly uses xmm registers and SIMD instructions like mulsd and addsd, which are optimized for double-precision floating-point operations. For the reduced abstraction overhead, assembly has minimal instruction dispatch which results in lower instruction latency, unlike in C where it goes through several compiler optimization layers and function call overheads. The third reason mentioned states that the loop in assembly avoids complicated indexing or memory safety checks performed implicitly by C, which therefore leads to faster execution especially with large data sets. And for the final reason, the consistent, simple loop with minimal branching enables better CPU pipelining and instruction prefetching.
+As we can see on the table, the Average Time of the x86-64 kernel is faster than the C kernel in all three vector sizes. Here are the reasons why: Register-Level Optimization, Reduced Abstraction Overhead, Fewer Memory Accesses and Function Calls, Better Instruction Pipelining. For register-level optimization, the assembly code directly uses xmm registers and SIMD instructions like mulsd and addsd, which are optimized for double-precision floating-point operations. For the reduced abstraction overhead, assembly has minimal instruction dispatch which results in lower instruction latency, unlike in C where it goes through several compiler optimization layers and function call overheads. The third reason mentioned states that the loop in assembly avoids complicated indexing or memory safety checks performed implicitly by C, which therefore leads to faster execution especially with large data sets. And for the final reason, the consistent, simple loop with minimal branching enables better CPU pipelining and instruction prefetching.
 
 ## 🎥 Demo Video
 
