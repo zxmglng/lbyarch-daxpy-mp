@@ -69,8 +69,7 @@ int main()
         for (int i = 0; i < n; i++) 
 		{
             if (fabs(Z_C[i] - Z_ASM[i]) > 1e-9) 
-			{
-                printf("\nMismatch at index %d: Z_C=%.2f Z_ASM=%.2f\n", i, Z_C[i], Z_ASM[i]);
+	    {
                 correct = 0;
                 break;
             }
@@ -80,9 +79,9 @@ int main()
         printf("ASM version average time: %.6f s\n", time_asm);
 
         if (correct)
-            printf("Correctness check: PASS\n");
+            printf("Correctness check: CORRECT\n");
         else
-            printf("Correctness check: FAIL\n");
+            printf("Correctness check: INCORRECT\n");
 
         free(X); free(Y); free(Z_C); free(Z_ASM);
     }
